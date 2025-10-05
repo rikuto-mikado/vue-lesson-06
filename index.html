@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- when writing in head, need to add defer -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <!-- you can also write as add, remove instead of add(), remove() -->
+      <button v-on:click="add(5)">Add 5</button>
+      <!-- .right modifier triggers only on right-click -->
+      <button v-on:click.right="remove(3)">Remove 3</button>
+      <p v-once>Starting Counter: {{ counter }}</p>
+      <p>Result: {{ counter }}</p>
+      <!-- $event is a special Vue keyword to pass the event object -->
+      <input type="text" v-on:input="setName($event, 'Mikado')" v-on:keyup.enter="confirmInput">
+      <p>Your Name: {{ confirmedName }}</p>
+      <!-- .prevent is a Vue event modifier that calls preventDefault() automatically -->
+      <form v-on:submit.prevent="submitForm">
+        <input typ="input">
+        <button>Sign Up</button>
+      </form>
+    </section>
+  </body>
+</html>
