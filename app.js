@@ -27,7 +27,12 @@ const app = Vue.createApp({
     remove(num) {
       this.counter = this.counter - num;
       // this.counter--;
-    }
+    },
+    resetInput() {
+      // Don't manipulate DOM directly in Vue.js - use this.name = '' instead since input is bound with v-model
+      // document.querySelector('input').value = '';
+      this.name = '';
+    },
   }
 });
 

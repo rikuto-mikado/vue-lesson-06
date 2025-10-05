@@ -26,7 +26,9 @@
       <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <!-- $event is a special Vue keyword to pass the event object -->
-      <input type="text" v-on:input="setName($event, 'Mikado')" v-on:keyup.enter="confirmInput">
+      <!-- v-bind:value creates one-way binding (data -> UI), v-on:input handles user input (UI -> data) -->
+      <input type="text" v-bind:value="name" v-on:input="setName($event, 'Mikado')" v-on:keyup.enter="confirmInput">
+      <button>Reset Input</button>
       <p>Your Name: {{ confirmedName }}</p>
       <!-- .prevent is a Vue event modifier that calls preventDefault() automatically -->
       <form v-on:submit.prevent="submitForm">
