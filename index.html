@@ -23,18 +23,13 @@
       <button v-on:click="add(5)">Add 5</button>
       <!-- .right modifier triggers only on right-click -->
       <button v-on:click.right="remove(3)">Remove 3</button>
-      <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
-      <!-- $event is a special Vue keyword to pass the event object -->
-      <!-- v-bind:value creates one-way binding (data -> UI), v-on:input handles user input (UI -> data) -->
-      <input type="text" v-bind:value="name" v-on:input="setName($event, 'Mikado')" v-on:keyup.enter="confirmInput">
-      <button>Reset Input</button>
+      <!-- v-model is a shorthand that combines v-bind:value and v-on:input for two-way data binding -->
+      <!-- Note: v-model can be used together with other event listeners like v-on:keyup.enter -->
+      <input type="text" v-model="name" v-on:keyup.enter="confirmInput">
+      <!-- Button with click event listener that calls resetInput method when clicked -->
+      <button v-on:click="resetInput">Reset Input</button>
       <p>Your Name: {{ confirmedName }}</p>
-      <!-- .prevent is a Vue event modifier that calls preventDefault() automatically -->
-      <form v-on:submit.prevent="submitForm">
-        <input typ="input">
-        <button>Sign Up</button>
-      </form>
     </section>
   </body>
 </html>
