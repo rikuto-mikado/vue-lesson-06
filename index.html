@@ -21,15 +21,16 @@
       <h2>Events in Action</h2>
       <!-- you can also write as add, remove instead of add(), remove() -->
       <button v-on:click="add(5)">Add 5</button>
-      <!-- .right modifier triggers only on right-click -->
-      <button v-on:click.right="remove(3)">Remove 3</button>
+      <button v-on:click="remove(3)">Remove 3</button>
       <p>Result: {{ counter }}</p>
       <!-- v-model is a shorthand that combines v-bind:value and v-on:input for two-way data binding -->
       <!-- Note: v-model can be used together with other event listeners like v-on:keyup.enter -->
-      <input type="text" v-model="name" v-on:keyup.enter="confirmInput">
+      <input type="text" v-model="name">
       <!-- Button with click event listener that calls resetInput method when clicked -->
       <button v-on:click="resetInput">Reset Input</button>
-      <p>Your Name: {{ confirmedName }}</p>
+      <!-- Unlike event handlers where () is optional, methods called in interpolation {{ }} need () to execute -->
+      <!-- However, computed properties should NOT use () - they are accessed like properties, not functions -->
+      <p>Your Name: {{ fullName }}</p>
     </section>
   </body>
 </html>
