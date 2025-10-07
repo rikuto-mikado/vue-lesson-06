@@ -26,6 +26,7 @@
       <!-- v-model is a shorthand that combines v-bind:value and v-on:input for two-way data binding -->
       <!-- Note: v-model can be used together with other event listeners like v-on:keyup.enter -->
       <input type="text" v-model="name">
+      <input type="text" v-model="lastname">
       <!-- Button with click event listener that calls resetInput method when clicked -->
       <button v-on:click="resetInput">Reset Input</button>
       <!-- Unlike event handlers where () is optional, methods called in interpolation {{ }} need () to execute -->

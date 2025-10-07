@@ -14,6 +14,20 @@
 - Computed properties in {{ }} do NOT use () - accessed like properties
 - Optional parameters in methods can be omitted if not used
 
+## Key Concepts: When to Use What
+
+| Feature | Purpose | Use Case |
+|---------|---------|----------|
+| **data** | Reactive state properties | Store values that can be updated and displayed |
+| **computed** | Cached calculated properties | Calculations based on data (best performance) |
+| **methods** | Functions that always execute | Event handlers, actions that need fresh results |
+| **watch** | React to data changes | Side effects like HTTP requests, timers, updating other data |
+
+**Quick Rule:**
+- Use **computed** for deriving values from data
+- Use **methods** for event handlers and actions
+- Use **watch** for side effects when data changes
+
 ## Challenges
 - Understanding v-model is syntactic sugar but can still work with additional event listeners
 - Remembering that removing event listeners breaks dependent functionality
