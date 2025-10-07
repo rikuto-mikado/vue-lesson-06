@@ -36,6 +36,11 @@
 | **v-model** | Two-way data binding | `v-model="name"` - Sync input with data (combines v-bind + v-on:input) |
 | **{{ }}** | Display data/computed | `{{ counter }}` or `{{ fullName }}` - Show reactive values |
 
+**Shorthand Syntax:**
+- `v-on:click` can be written as `@click`
+- `v-bind:value` can be written as `:value`
+- Both are equivalent, shorthand is more commonly used
+
 ## Challenges
 - Understanding v-model is syntactic sugar but can still work with additional event listeners
 - Remembering that removing event listeners breaks dependent functionality
