@@ -28,6 +28,14 @@
 - Use **methods** for event handlers and actions
 - Use **watch** for side effects when data changes
 
+## Directives Used in This Project
+
+| Directive | Purpose | Example |
+|-----------|---------|---------|
+| **v-on:click** | Listen to events | `v-on:click="add(5)"` - Trigger method on click |
+| **v-model** | Two-way data binding | `v-model="name"` - Sync input with data (combines v-bind + v-on:input) |
+| **{{ }}** | Display data/computed | `{{ counter }}` or `{{ fullName }}` - Show reactive values |
+
 ## Challenges
 - Understanding v-model is syntactic sugar but can still work with additional event listeners
 - Remembering that removing event listeners breaks dependent functionality
